@@ -1,0 +1,16 @@
+.title{
+	width: 100%;
+	margin-left: 10px;
+	margin-top: 30px;
+	font-size: 20pt;
+	color: #333333;
+	border-bottom: 1px solid #333333;
+}
+.date{
+	margin-left: 10px;
+	font-size: 9pt;
+}
+.content{
+	margin-left: 10px;
+	font-size: 13pt;
+}
