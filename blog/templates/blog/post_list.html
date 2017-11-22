@@ -4,6 +4,12 @@
 	<title></title>
 </head>
 <body>
-asdsadfghjfghjfghjfgh
+{% for post in posts %}
+	<div>
+		<p>{{post.published_date}}</p>
+		<p>{{post.title}}</p>
+		<p>{{post.text|linebreaksbr}}</p>
+	</div>
+{% endfor %}
 </body>
 </html>
