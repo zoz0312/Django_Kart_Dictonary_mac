@@ -19,3 +19,16 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Kartbody(models.Model):
+    author = models.ForeignKey('auth.User')
+    name = models.CharField(max_length=30)
+    level = models.CharField(max_length=10)
+    simple_text = models.TextField()
+    ability_text = models.TextField()
+    histpry_text = models.TextField()
+    body_img = models.ImageField(upload_to="images/",max_length=100, null=True)
+    ability_img = models.ImageField(upload_to="images/",max_length=100, null=True)
+
+    def __str__(self):
+        return self.name
