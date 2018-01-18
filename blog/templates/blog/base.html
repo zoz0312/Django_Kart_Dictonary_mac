@@ -41,6 +41,12 @@
     {% if user.is_authenticated %}
         <a href="{% url 'post_new' %}" class="top-menu">
             추가하기
+        </a>&nbsp;&nbsp;
+        <a href="{% url 'post_draft_list' %}" class="top-menu">Edit</a>
+        <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+    {% else %}
+        <a href="{% url 'login' %}" class="top-menu">
+            몽땅따
         </a>
     {% endif %}
 
