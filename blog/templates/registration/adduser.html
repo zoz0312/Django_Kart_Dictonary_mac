@@ -1,13 +1,37 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+{% if user.is_authenticated %}
+<script type="text/javascript">
+  alert('잘못된 접근입니다. \n회원가입을 위해서는 로그아웃이 필요합니다.')
+  window.location.href = '/';
+</script>
+{% else %}
+
+<form method="POST" action="" class="sign-up-form">
+  {%csrf_token%}
+  <h2 class="sub-title"> 회원가입 </h2>
+  {% for field in form %}
+      <div class="form-group">
+        {{ field.label }}
+        {{field}}
+      </div>
+  {% endfor %}
+  <button type="submit" class="save btn btn-success">회원가입</button>
+  <a href="{% url 'post_list' %}">
+    <button type="button" class="btn btn-danger">취소</button>
+  </a>
+</form>
+{% endif %}
+
+<!--
+
 <h2>회원가입</h2>
 <form method="post" action="">
     {% csrf_token %}
-    <!--
 	form, form.as_p, form.as_table, form.as_ul
 	{{ form }}
-    -->
+    
 
     <div>
     	<tr><th><label for="id_username">사용자 이름:</label></th><td><input type="text" name="username" maxlength="150" required id="id_username" /><br /><span class="helptext">150자 이하 문자, 숫자 그리고 @/./+/-/_만 가능합니다.</span></td></tr>
@@ -16,4 +40,5 @@
     </div>
     <input type="submit" value="회원가입" />
 </form>
+-->
 {% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+	{% for Kartbody in karts %}
+		<div>
+			<div class="title">
+				{{Kartbody.name}}
+			</div>
+			<div class="date">
+				{{Kartbody.level}}
+			</div>
+			<div class="content">
+				{{Kartbody.body_img}}
+			</div>
+			<div>
+				{{Kartbody.body_type}}
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}

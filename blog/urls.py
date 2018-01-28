@@ -1,3 +1,4 @@
+from django.contrib.auth import views as auth_views
 from django.conf.urls import url
 from . import views
 
@@ -13,4 +14,9 @@ urlpatterns = [
     url(r'^comment/(?P<pk>\d+)/approve/$', views.comment_approve, name='comment_approve'),
 	url(r'^comment/(?P<pk>\d+)/remove/$', views.comment_remove, name='comment_remove'),
 	url(r'^join/$', views.signup, name='join'),
+
+    url(r'^kartbody/$', views.kart_list, name='kart_list'),
+
 ]
+
+

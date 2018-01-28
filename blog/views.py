@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
-from .models import Post, Comment
+from .models import Post, Comment, Kartbody
 from .forms import PostForm, CommentForm, UserForm
 
 from django.contrib.auth.decorators import login_required
@@ -102,7 +102,14 @@ def signup(request):
             new_user = User.objects.create_user(**form.cleaned_data)
             login(request, new_user)
             return redirect('post_list')
+        else:
+            return HttpResponse('사용자명이 이미 존재합니다.')
     else:
         form = UserForm()
         return render(request, 'registration/adduser.html', {'form': form})
 
+
+
+def kart_list(request):
+    karts = Kartbody.objects.filter(level="JIU")
+    return render(request, 'menu/kart_list.html', {'karts': karts})
