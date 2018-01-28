@@ -101,7 +101,7 @@ def signup(request):
         if form.is_valid():
             new_user = User.objects.create_user(**form.cleaned_data)
             login(request, new_user)
-            return redirect('registration/adduser.html')
+            return redirect('post_list')
     else:
         form = UserForm()
         return render(request, 'registration/adduser.html', {'form': form})
