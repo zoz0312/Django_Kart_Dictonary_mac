@@ -1,0 +1,24 @@
+.kart-list { 
+	width: 100%;
+	text-align: center;
+	height: auto;
+	border-top: 3px solid #428bca;
+	background-color: #FFFFFF;
+}
+.kart-list a{ display: inline-block; text-decoration:none; }
+.kart-list a:link { color: black; text-decoration: none; }
+.kart-list a:visited { color: black; text-decoration: none; }
+
+.kart-list .kart-img {
+	display: inline-block;  
+	width: 200px;
+	height: 200px;
+}
+.kart-list .inform-field{ display: inline-block; vertical-align: top; }
+.kart-list .inform-field .kart-name{ padding: 10px 10px; font-size: 60px; line-height:100px; font-weight: bold; }
+.kart-list .inform-field .kart-type .t-level, .kart-list .inform-field .kart-type .t-class{ display: inline-block; font-size: 40px; padding: 0 10px;}
+.unique{
+	color: #f8f017;
+}
+
+

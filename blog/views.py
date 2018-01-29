@@ -113,3 +113,7 @@ def signup(request):
 def kart_list(request):
     karts = Kartbody.objects.filter(level="JIU")
     return render(request, 'menu/kart_list.html', {'karts': karts})
+
+def kart_detail(request, kart_code):
+    kart = get_object_or_404(Kartbody, kart_code=kart_code)
+    return render(request, 'menu/kart_detail.html', {'kart': kart})

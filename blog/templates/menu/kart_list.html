@@ -2,19 +2,27 @@
 
 {% block content %}
 	{% for Kartbody in karts %}
-		<div>
-			<div class="title">
-				{{Kartbody.name}}
-			</div>
-			<div class="date">
-				{{Kartbody.level}}
-			</div>
-			<div class="content">
-				{{Kartbody.body_img}}
-			</div>
-			<div>
-				{{Kartbody.body_type}}
-			</div>
+		<div class="kart-list">
+			<a href="{% url 'kart_detail' kart_code=Kartbody.kart_code %}">
+				<img class="kart-img"src="{{Kartbody.body_img}}"/>
+				<div class="inform-field">
+					<div class="kart-name">
+						{{Kartbody.name}}
+					</div>
+					<div class="kart-type">
+						<div class="t-level">
+							{{Kartbody.level}}
+						</div>
+						{% if Kartbody.kart_class == "유니크" %}
+						<div class="t-class unique">
+						{% else %}
+						<div class="t-class">
+						{% endif %}
+							{{Kartbody.kart_class}}
+						</div>
+					</div>
+				</div>
+			</a>
 		</div>
 	{% endfor %}
 {% endblock %}

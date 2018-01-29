@@ -16,7 +16,7 @@ urlpatterns = [
 	url(r'^join/$', views.signup, name='join'),
 
     url(r'^kartbody/$', views.kart_list, name='kart_list'),
-
+    url(r'^kartbody/(?P<kart_code>.+?)/$', views.kart_detail, name='kart_detail'),
 ]
 
 
