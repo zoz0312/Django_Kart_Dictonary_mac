@@ -13,11 +13,7 @@
 						<div class="t-level">
 							{{Kartbody.level}}
 						</div>
-						{% if Kartbody.kart_class == "유니크" %}
-						<div class="t-class unique">
-						{% else %}
-						<div class="t-class">
-						{% endif %}
+						<div id="class{{forloop.counter}}" class="t-class"">
 							{{Kartbody.kart_class}}
 						</div>
 					</div>

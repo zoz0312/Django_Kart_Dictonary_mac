@@ -9,6 +9,7 @@ footer{
 	text-align: center;
 	background-color: #DDDDDD;
 	color: #999999;
+	clear: both;
 }
 .page-header{
 	width: 100%;
