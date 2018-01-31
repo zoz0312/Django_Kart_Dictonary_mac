@@ -32,9 +32,9 @@
 .view-area #detail-tab{ width: 100%; height: 80px; margin:0; padding:0; text-align:center;}
 .view-area #detail-tab .tab1,
 .view-area #detail-tab .tab2,
-.view-area #detail-tab .tab3{ display: inline-block; width: 33.2%; height: 80px; margin:0; padding:0; font-size: 30px; line-height: 84px; text-align: center;}
+.view-area #detail-tab .tab3{ display: inline-block; width: 33.2%; margin:0; padding:0; font-size: 30px; text-align: center; vertical-align: bottom;}
 .view-area .content { width: 100%; height:320px; background-color: #00FFFF; z-index: 1;}
 .view-area .simple-text { width: 100%; height:100px; background-color: #0099FF; text-align: center;padding: 10px;}
-.tab1{ z-index: 0; background-color: #428bca; border:0.1% solid #428bca; border-radius: 10px 10px 0 0; color:#FFFFFF;}
+.tab1{ z-index: 0; background-color: #428bca; border:0.1% solid #428bca; border-radius: 10px 10px 0 0; color:#FFFFFF; height: 100%; }
 .tab2,
-.tab3{ z-index: -1; background-color: #999999; border:0.1% solid #428bca; border-radius: 10px 10px 0 0; color:#FFFFFF; }
+.tab3{ z-index: -1; background-color: #999999; border:0.1% solid #428bca; border-radius: 10px 10px 0 0; color:#FFFFFF; height: 100%; }
