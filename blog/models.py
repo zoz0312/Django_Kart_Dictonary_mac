@@ -41,7 +41,7 @@ class Kartbody(models.Model):
     level = models.CharField(max_length=10) #카트바디 등급 (JUI, NEW ...)
     simple_text = models.TextField()        #개발자 한줄평
     ability_text = models.TextField()       #능력치
-    histpry_text = models.TextField()       #역사 배경
+    history_text = models.TextField()       #역사 배경
     body_img = models.ImageField(upload_to="images/",max_length=100, null=True)
     #카트바디 이미지
     kart_code = models.CharField(max_length=10, null=True)     #객체 코드 (한줄평에서 필요함)
