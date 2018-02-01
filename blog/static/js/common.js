@@ -1,30 +1,37 @@
 $(document).ready(function(){
-    tab_css('tab1');
+    
+    init();
 
     for( var i=1; i<=3; i++ ){
-        var tab = ".tab"+i;
+        var tab = "#tab"+i;
         $(tab).click(function(){
-            tab_css($(this).attr('class'));
+            tab_css($(this).attr('id'), 500);
         });
     }
 
-    function tab_css( name ){
+    function tab_css( name, move_time ){
         for( var j=1; j<=3; j++ ){
-            var change_tab = ".tab"+j;
-            if( "tab"+j != name ){
-                $(change_tab).css({
-                    'backgroundColor':'#999999',
-                    'height':'70%',
-                    'line-height': '60px'
-                });
-            } else {
-                $(change_tab).css({
+            var change_tab = "#tab"+j;
+            if( "tab"+j == name ){
+                $(change_tab).animate({
                   'backgroundColor': '#428bca',
-                  'height':'100%',
-                  'line-height': '84px'
-                }, 1000);
+                  'height':'80px',
+                  'line-height': '84px',
+                  'margin-top':'0px'
+                }, move_time);
+            } else {
+                $(change_tab).animate({
+                    'backgroundColor':'#999999',
+                    'height':'50px',
+                    'line-height': '54px',
+                    'margin-top': '30px',
+                }, move_time);
             }
         }
+    }
+
+    function init(){
+        tab_css('tab1', 100);
     }
 });
 
