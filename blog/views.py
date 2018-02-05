@@ -83,7 +83,7 @@ def add_comment_to_post(request, pk):
 #login
 @login_required
 def comment_approve(request, pk):
-    comment = get_object_or_404(Comment, pk=pk)
+    comment = c(Comment, pk=pk)
     comment.approve()
     return redirect('post_detail', pk=comment.post.pk)
 
@@ -116,4 +116,7 @@ def kart_list(request):
 
 def kart_detail(request, kart_code):
     kart = get_object_or_404(Kartbody, kart_code=kart_code)
-    return render(request, 'menu/kart_detail.html', {'kart': kart})
+    apr = get_object_or_404(Apraisal, model_code=kart_code)
+    return render(request, 'menu/kart_detail.html', {'kart': kart,'apr': apr})
+
+

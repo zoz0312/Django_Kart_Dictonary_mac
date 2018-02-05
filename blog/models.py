@@ -63,10 +63,10 @@ class Recommend(models.Model):
 
 class Apraisal(models.Model):
     user_id = models.CharField(max_length=50)
-    model_code = models.CharField(max_length=10)    #객체코드
+    model_code = models.CharField(max_length=10)    #객체코드 ( 카트바디 등 )
     text = models.TextField()
-    model_type = models.CharField(max_length=10)    #아이템, 스피드, 엔진, 헨들...등등
-    text_code = models.CharField(max_length=10)     #텍스트 고유값
+    #model_type = models.CharField(max_length=10)    #아이템, 스피드, 엔진, 헨들...등등
+    #text_code = models.CharField(max_length=10)     #텍스트 고유값
 
     def __str__(self):
         return self.name
