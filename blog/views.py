@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
-from .models import Post, Comment, Kartbody
+from .models import Post, Comment, Kartbody, Comment, Appraisal
 from .forms import PostForm, CommentForm, UserForm
 
 from django.contrib.auth.decorators import login_required
@@ -116,7 +116,7 @@ def kart_list(request):
 
 def kart_detail(request, kart_code):
     kart = get_object_or_404(Kartbody, kart_code=kart_code)
-    apr = get_object_or_404(Apraisal, model_code=kart_code)
-    return render(request, 'menu/kart_detail.html', {'kart': kart,'apr': apr})
+    #appr = get_object_or_404(Appraisal, model_code=kart_code)
+    return render(request, 'menu/kart_detail.html', {'kart': kart})
 
 

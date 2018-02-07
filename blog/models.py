@@ -61,7 +61,7 @@ class Recommend(models.Model):
     def __str__(self):
         return self.name
 
-class Apraisal(models.Model):
+class Appraisal(models.Model):
     user_id = models.CharField(max_length=50)
     model_code = models.CharField(max_length=10)    #객체코드 ( 카트바디 등 )
     text = models.TextField()
