@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .models import Post, Comment, Kartbody, Comment, Appraisal
-from .forms import PostForm, CommentForm, UserForm
+from .forms import PostForm, CommentForm, UserForm, ApprForm
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -117,6 +117,18 @@ def kart_list(request):
 def kart_detail(request, kart_code):
     kart = get_object_or_404(Kartbody, kart_code=kart_code)
     #appr = get_object_or_404(Appraisal, model_code=kart_code)
-    return render(request, 'menu/kart_detail.html', {'kart': kart})
+
+    if request.method == "POST":
+        form = Appr(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.Kartbody
+            #post.published_date = timezone.now()
+            post.save()
+            return redirect('kart_detail', pk=post.pk)
+    else:
+        return render(request, 'menu/kart_detail.html', {'kart': kart})
+
+    
 
 

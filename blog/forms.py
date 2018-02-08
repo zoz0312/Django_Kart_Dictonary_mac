@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, Comment
+from .models import Post, Comment, Appraisal
 from django.contrib.auth.models import User
 
 class PostForm(forms.ModelForm):
@@ -30,3 +30,8 @@ class UserForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(UserForm, self).__init__( *args, **kwargs)
         self.fields['username'].widget.attrs['maxlength'] = 15
+
+class ApprForm(forms.ModelForm):
+    class Meta:
+        model = Appraisal
+        fields = ('text',)
