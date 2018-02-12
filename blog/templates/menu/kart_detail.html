@@ -29,6 +29,7 @@
 
 	<div class="board-area">
 		<form method="POST" class="post-form">
+	    	{{ appr.text }}
 	    	{% csrf_token %}
 	        {{ form.as_p }}
 	        <button type="submit" class="save btn btn-default">

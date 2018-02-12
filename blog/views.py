@@ -116,7 +116,7 @@ def kart_list(request):
 
 def kart_detail(request, kart_code):
     kart = get_object_or_404(Kartbody, kart_code=kart_code)
-    #appr = get_object_or_404(Appraisal, model_code=kart_code)
+    appr = Appraisal.objects.filter(model_code=kart.id)
 
     if request.method == "POST":
         form = Appr(request.POST, instance=post)
@@ -127,7 +127,7 @@ def kart_detail(request, kart_code):
             post.save()
             return redirect('kart_detail', pk=post.pk)
     else:
-        return render(request, 'menu/kart_detail.html', {'kart': kart})
+        return render(request, 'menu/kart_detail.html', {'kart': kart, 'appr':appr})
 
     
 
