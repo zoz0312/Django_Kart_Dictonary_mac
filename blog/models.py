@@ -69,7 +69,7 @@ class Appraisal(models.Model):
     #text_code = models.CharField(max_length=10)     #텍스트 고유값
 
     def __str__(self):
-        return self.text
+        return self.model_code
 
 
 

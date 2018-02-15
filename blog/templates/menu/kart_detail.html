@@ -28,8 +28,10 @@
 	</div>
 
 	<div class="board-area">
+		{% for Appraisal in appr %}
+		<div>{{Appraisal.text}}</div>
+		{% endfor %}
 		<form method="POST" class="post-form">
-	    	{{ appr.text }}
 	    	{% csrf_token %}
 	        {{ form.as_p }}
 	        <button type="submit" class="save btn btn-default">
