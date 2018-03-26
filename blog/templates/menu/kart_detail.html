@@ -27,16 +27,21 @@
 	    </div>
 	</div>
 
-	<div class="board-area">
+	<div id="board-area">
+		<div class="comment-write">
+			<form method="POST" class="post-form">
+		    	{% csrf_token %}
+		        {{ form.as_p }}
+		        <button type="submit" class="save btn btn-default">
+		        	Save
+		    	</button>
+		    </form>
+		</div>
 		{% for Appraisal in appr %}
-		<div>{{Appraisal.text}}</div>
+		<div class="comment-view">
+			<div class="user-id">{{Appraisal.user_id}}</div>
+			<div class="user-text">{{Appraisal.text}}</div>
+		</div>
 		{% endfor %}
-		<form method="POST" class="post-form">
-	    	{% csrf_token %}
-	        {{ form.as_p }}
-	        <button type="submit" class="save btn btn-default">
-	        	Save
-	    	</button>
-	    </form>
 	</div>
 {% endblock %}
