@@ -32,16 +32,20 @@
 			<form method="POST" class="post-form">
 		    	{% csrf_token %}
 		        {{ form.as_p }}
-		        <button type="submit" class="save btn btn-default">
+		        <textarea></textarea><button type="submit">
 		        	Save
 		    	</button>
 		    </form>
+		    {% for Appraisal in appr %}
+			<div class="comment-view">
+				<div class="user-id">
+					{{Appraisal.user_id}}
+				</div><div class="user-text">
+					{{Appraisal.text}}
+				</div>
+			</div>
+			{% endfor %}
 		</div>
-		{% for Appraisal in appr %}
-		<div class="comment-view">
-			<div class="user-id">{{Appraisal.user_id}}</div>
-			<div class="user-text">{{Appraisal.text}}</div>
-		</div>
-		{% endfor %}
+
 	</div>
 {% endblock %}

@@ -45,20 +45,69 @@
 .view-area .content .view { padding: 20px; text-align: center; }
 .view-area .content #view1 .img-kart{ width: 280px; height:280px; background-color: #000000; }
 
-#board-area{ width: 100%; height:500px; margin-top: 20px;}
-#board-area .comment-view .user-id,
-#board-area .comment-view .user-text{
+#board-area{ width: 100%; height:500px; padding-top: 1px; background-color: #DDDDDD; }
+#board-area .comment-write{
+	width: 70%;
+	margin: 0 auto;
+	box-shadow: 0 5px 5px 5px #888888;
+}
+#board-area .comment-write .post-form{
+	width: 100%;
+	height: 70px;
+	margin-top: 20px;
+	padding-bottom: 2px;
+	background-color: #FFFFFF;
+	text-align: center;
+}
+#board-area .comment-write .post-form *{
+	padding: 0;
+	margin: 0;
+	font-size: 1rem;
+}
+#board-area .comment-write textarea{
 	display: inline-block;
+	width: 85%;
+	height: 70px;
+	border: 0;
+	border-top: 3px solid #428bca;
+	border-bottom: 2px solid #428bca;
+	vertical-align: middle;
+	resize: none;
+}
+
+#board-area .comment-write button{
+	display: inline-block;
+	width: 15%;
+	height: 75px;
+	border: 0;
+	border-top: 3px solid #428bca;
+	border-bottom: 2px solid #428bca;
+	border-left: 1px solid #428bca;
+	vertical-align: top;
+	color: #FFFFFF;
+	background-color: #428bca;
+	resize: none;
+	cursor: pointer;
 }
 #board-area .comment-view{
 	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+
+#board-area .comment-view .user-id,
+#board-area .comment-view .user-text{
+	display: inline-block;
+	height: 20px;
+	padding: 10px 1%;
+	border-top: 1px solid #428bca;
 }
 #board-area .comment-view .user-id{
-	width: 120px;
-	height: auto;
+	width: 13%;
 }
 #board-area .comment-view .user-text{
-	width: auto;
-	height: auto;
+	width: 83%;
+	text-align: left;
 }
 
