@@ -38,13 +38,17 @@ $(document).ready(function(){
         for( var j=1; j<=3; j++ ){
             var change_tab = "#tab"+j;
             var div_view = '#view'+j;
+            console.log(change_tab);
+
             if( "tab"+j == name ){
                 $(change_tab).animate({
-                  'backgroundColor': '#428bca',
                   'height':'80px',
                   'line-height': '84px',
                   'margin-top':'0px'
                 }, move_time);
+                $(change_tab).css({
+                    'background-color':'#428bca',
+                });
 
                 $(div_view).delay("fast").fadeIn();
             } else {
@@ -54,6 +58,9 @@ $(document).ready(function(){
                     'line-height': '54px',
                     'margin-top': '30px',
                 }, move_time);
+                $(change_tab).css({
+                    'background-color':'#999999',
+                });
                 $(div_view).css({
                     'display':'none',
                 },move_time);

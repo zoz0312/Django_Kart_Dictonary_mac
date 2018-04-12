@@ -19,6 +19,15 @@ footer{
 .page-header .header-title{		
 	text-align: center;
 }
+.page-header .header-title .header-login{
+	position: absolute;
+	right: 0;
+	padding: 3px 6px;
+	text-align: right;
+}
+.page-header .header-title .header-login a{
+	margin: 0;
+}
 .page-header .header-title a{
 	display: inline-block;
 	height: 100%;

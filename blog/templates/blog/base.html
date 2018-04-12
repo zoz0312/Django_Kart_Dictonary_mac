@@ -12,6 +12,22 @@
 <body>
     <div class="page-header">
         <div class="header-title">
+            <div class="header-login">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'post_new' %}" class="top-menu">
+                        추가하기
+                    </a>&nbsp;&nbsp;
+                    <a href="{% url 'post_draft_list' %}" class="top-menu">Edit</a>
+                    <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+                {% else %}
+                    <a href="{% url 'login' %}" class="top-menu">
+                        몽땅따
+                    </a>
+                    <a href="{% url 'join' %}" class="top-menu">
+                    회원가입
+                    </a>
+                {% endif %}
+            </div>
             <a href="{% url 'post_list' %}">
                 <div class="big-title">
                     KART RIDER
@@ -37,23 +53,6 @@
             </div>
         </div>
     </div>
-
-    
-
-    {% if user.is_authenticated %}
-        <a href="{% url 'post_new' %}" class="top-menu">
-            추가하기
-        </a>&nbsp;&nbsp;
-        <a href="{% url 'post_draft_list' %}" class="top-menu">Edit</a>
-        <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
-    {% else %}
-        <a href="{% url 'login' %}" class="top-menu">
-            몽땅따
-        </a>
-        <a href="{% url 'join' %}" class="top-menu">
-        회원가입
-        </a>
-    {% endif %}
 
     <div class="content container">
         <div class="row">
