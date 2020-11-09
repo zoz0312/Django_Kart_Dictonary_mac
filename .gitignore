@@ -1,1 +1,4 @@
 mysite
+myvenv
+db.sqlite3
+.swp
